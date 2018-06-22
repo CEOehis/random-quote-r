@@ -1,0 +1,36 @@
+.App {
+  background: white;
+  width: 50%;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 3px;
+}
+
+#text {
+  text-align: center;
+}
+
+#author {
+  text-align: right;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+@media only screen and (min-width: 600px) {
+  .App {
+    max-width: 400px;
+  }
+}
+
+@media only screen and (min-width: 300px) {
+  .App {
+    width: 80%;
+    padding: 20px 15px;
+  }
+}
