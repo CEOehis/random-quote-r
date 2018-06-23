@@ -75,7 +75,7 @@ export default class App extends Component {
         <div id="text">{currentQuote}</div>
         <div id="author">- {currentAuthor}</div>
         <div className="actions">
-          <Button id="tweet-quote">Tweet</Button>
+          <a id="tweet-quote" target="_blank" href={`https://twitter.com/intent/tweet?hashtags=quotes,FCC&text="${encodeURIComponent(currentQuote)}" ${encodeURIComponent(currentAuthor)}`}>Tweet</a>
           <Button onClick={this.getQuote} id="new-quote" color="#0E94D3">New Quote</Button>
         </div>
       </div>

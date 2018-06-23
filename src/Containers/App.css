@@ -22,6 +22,21 @@
   margin-top: 15px;
 }
 
+#tweet-quote {
+  border-radius: 3px;
+  padding: 0.5em 1em;
+  background: transparent;
+  color: #0E94D3;
+  border: 2px solid #0E94D3;
+  transition: all .9s;
+  text-decoration: none;
+}
+
+#tweet-quote:hover {
+  background: #0E94D3;
+  color: white;
+}
+
 @media only screen and (min-width: 600px) {
   .App {
     max-width: 400px;
