@@ -50,6 +50,8 @@ export default class App extends Component {
       currentQuote: '',
       currentAuthor: ''
     }
+
+    this.getQuote = this.getQuote.bind(this);
   }
 
   componentDidMount() {
@@ -74,7 +76,7 @@ export default class App extends Component {
         <div id="author">- {currentAuthor}</div>
         <div className="actions">
           <Button id="tweet-quote">Tweet</Button>
-          <Button id="new-quote" color="#0E94D3">New Quote</Button>
+          <Button onClick={this.getQuote} id="new-quote" color="#0E94D3">New Quote</Button>
         </div>
       </div>
     )
