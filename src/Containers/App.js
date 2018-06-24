@@ -31,6 +31,12 @@ function displayRandomQuote(quote) {
   }
 }
 
+function doneLoading(state) {
+  return {
+    isLoading: false
+  }
+}
+
 /**
  * gets a Random Quote from an array of quotes
  *
@@ -48,7 +54,8 @@ export default class App extends Component {
     this.state = {
       quotes: [],
       currentQuote: '',
-      currentAuthor: ''
+      currentAuthor: '',
+      isLoading: true
     }
 
     this.getQuote = this.getQuote.bind(this);
@@ -64,6 +71,7 @@ export default class App extends Component {
       .then(res => res.json())
       .then(res => {
         this.setState(addQuotes(res));
+        this.setState(doneLoading);
         this.getQuote();
       })
       .catch(error => {
@@ -79,7 +87,16 @@ export default class App extends Component {
   }
 
   render() {
-    const { currentAuthor, currentQuote } = this.state;
+    const { currentAuthor, currentQuote, isLoading } = this.state;
+
+    if (isLoading) {
+      return (
+        <div id="quote-box" className="App">
+          <div className="loading">...Loading</div>
+        </div>
+      )
+    }
+
     return (
       <div id="quote-box" className="App">
         <div id="text">{currentQuote}</div>

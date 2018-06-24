@@ -38,6 +38,11 @@
   color: white;
 }
 
+.loading {
+  text-align: center;
+  font-size: 2em;
+}
+
 @media only screen and (min-width: 600px) {
   .App {
     max-width: 400px;
